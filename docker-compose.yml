@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    image: vishakhagujar/ci-cd-node-app:latest   # change to your Docker Hub username
+    ports:
+      - "3000:3000"

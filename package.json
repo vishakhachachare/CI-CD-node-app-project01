@@ -1,0 +1,15 @@
+{
+  "name": "ci-cd-node-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for CI/CD pipeline demo with Docker and GitHub Actions",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "author": "Vishakha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

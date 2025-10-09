@@ -1,0 +1,34 @@
+ci-cd-node-app/
+│
+├── app.js
+├── package.json
+├── package-lock.json             # (auto-created after running `npm install`)
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+├── .gitignore
+│
+├── __tests__/                    # Test folder
+│   └── app.test.js
+│
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml             # GitHub Actions workflow file
+│
+└── README.md                     # Documentation file
+
+
+
+
+| File / Folder                 | Purpose                                                                |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| `app.js`                      | Main Express app — runs server and exposes `/` and `/health` endpoints |
+| `package.json`                | Defines Node.js dependencies, test and start scripts                   |
+| `package-lock.json`           | Lock file for deterministic dependency installs                        |
+| `Dockerfile`                  | Builds a lightweight Node.js Docker image                              |
+| `docker-compose.yml`          | Local setup to run app via Docker Compose                              |
+| `.dockerignore`               | Excludes files/folders from Docker image build                         |
+| `.gitignore`                  | Excludes files/folders from Git commits                                |
+| `__tests__/app.test.js`       | Jest + Supertest integration tests                                     |
+| `.github/workflows/ci-cd.yml` | GitHub Actions workflow for CI/CD                                      |
+| `README.md`                   | Documentation explaining setup, pipeline, and usage                    |
