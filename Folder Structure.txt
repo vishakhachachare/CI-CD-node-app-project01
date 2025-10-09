@@ -1,6 +1,5 @@
 ci-cd-node-app/
 │
-├── app.js
 ├── package.json
 ├── package-lock.json             # (auto-created after running `npm install`)
 ├── Dockerfile
@@ -11,6 +10,9 @@ ci-cd-node-app/
 ├── __tests__/                    # Test folder
 │   └── app.test.js
 │
+| ── src/                    # Test folder
+│   └── index.js
+|
 ├── .github/
 │   └── workflows/
 │       └── ci-cd.yml             # GitHub Actions workflow file
@@ -22,7 +24,7 @@ ci-cd-node-app/
 
 | File / Folder                 | Purpose                                                                |
 | ----------------------------- | ---------------------------------------------------------------------- |
-| `app.js`                      | Main Express app — runs server and exposes `/` and `/health` endpoints |
+| `index.js`                      | Main Express app — runs server and exposes `/` and `/health` endpoints |
 | `package.json`                | Defines Node.js dependencies, test and start scripts                   |
 | `package-lock.json`           | Lock file for deterministic dependency installs                        |
 | `Dockerfile`                  | Builds a lightweight Node.js Docker image                              |
