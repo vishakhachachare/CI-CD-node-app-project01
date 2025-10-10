@@ -28,7 +28,7 @@ jobs:
 
       # Install dependencies cleanly
       - name: 📦 Install dependencies
-        run: npm install
+        run: npm ci
 
       # Run tests (optional)
       - name: ✅ Run tests
