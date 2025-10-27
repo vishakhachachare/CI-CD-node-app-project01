@@ -1,17 +1,20 @@
-# small production image
+# Use Node.js base image
 FROM node:18-alpine
 
-WORKDIR /src
+# Set working directory
+WORKDIR /app
 
-# copy package files first (cache layers)
+# Copy package files
 COPY package*.json ./
 
-# install only production deps for image
-RUN npm install --production --silent
+# Install dependencies
+RUN npm ci --only=production
 
-# copy app
+# Copy the rest of the code
 COPY . .
 
+# Expose app port
 EXPOSE 3000
 
-CMD ["node", "index.js"]
+# Start the app
+CMD ["node", "src/index.js"]
