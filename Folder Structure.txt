@@ -1,9 +1,17 @@
-ci-cd-node-app/
+CI-CD-node-app-project01/
+│
+├── src/
+│   ├── index.js
+│   └── public/
+│       ├── dashboard.html
+│       ├── about.html
+│       ├── health.html
+│       └── version.html
 │
 ├── package.json
-├── package-lock.json             # (auto-created after running `npm install`)
 ├── Dockerfile
 ├── docker-compose.yml
+<<<<<<< HEAD
 ├── .dockerignore
 ├── .gitignore
 │
@@ -21,6 +29,9 @@ ci-cd-node-app/
 │
 └── README.md                     # Documentation file
 
+=======
+└── README.md
+>>>>>>> 4a6da99 (update all the routes)
 
 
 

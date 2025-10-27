@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files (
 const PORT = process.env.PORT || 3000;
 const ENV = process.env.NODE_ENV || 'development';
 
+<<<<<<< HEAD
 // Root Route
 app.get('/', (req, res) => {
   res.json({
@@ -115,15 +116,37 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     server: os.hostname(),
   });
+=======
+
+// Route for dashboard.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "dashboard.html"));
+});
+
+
+// About Route
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "about.html"));
+});
+
+
+// Health Check Route
+app.get('/health', (req, res) => {
+   res.sendFile(path.join(__dirname, "public", "health.html"));
+>>>>>>> 4a6da99 (update all the routes)
 });
 
 // Version Info
 app.get('/version', (req, res) => {
+<<<<<<< HEAD
   res.json({
     version: '1.0.0',
     author: 'Vishakha Gujar',
     lastDeployed: new Date().toLocaleString(),
   });
+=======
+   res.sendFile(path.join(__dirname, "public", "version.html"));
+>>>>>>> 4a6da99 (update all the routes)
 });
 
 // Echo Route

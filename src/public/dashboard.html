@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🚀 CI/CD Node.js Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #9333ea, #ec4899);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body class="text-white min-h-screen flex flex-col items-center justify-center font-sans">
+  <!-- Header -->
+  <header class="absolute top-6 left-1/2 transform -translate-x-1/2 text-center">
+    <h1 class="text-5xl font-extrabold tracking-tight drop-shadow-lg">🚀 CI/CD Node.js Application</h1>
+    <p class="mt-2 text-lg opacity-90">A fully automated Continuous Integration & Deployment workflow using GitHub Actions & Docker.</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="mt-40 flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-6xl">
+    
+    <!-- Project Overview -->
+    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 w-80 hover:scale-105 transition-transform duration-300 shadow-lg">
+      <h2 class="text-2xl font-semibold mb-3">📘 Project Overview</h2>
+      <p class="text-sm leading-relaxed text-white/90">
+        This Node.js app showcases a complete CI/CD workflow — from code commit to automated build, test, image creation, and deployment.
+      </p>
+      <ul class="list-disc mt-4 ml-5 text-white/90 space-y-1 text-sm">
+        <li>Express.js Backend</li>
+        <li>Docker Image Build & Push</li>
+        <li>GitHub Actions Pipeline</li>
+      </ul>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 w-80 hover:scale-105 transition-transform duration-300 shadow-lg">
+      <h2 class="text-2xl font-semibold mb-3">🧠 Tech Stack</h2>
+      <ul class="space-y-2 text-sm text-white/90">
+        <li>⚙️ Node.js (Express Framework)</li>
+        <li>🐳 Docker for containerization</li>
+        <li>💻 GitHub Actions for CI/CD</li>
+        <li>☁️ AWS EC2 / Docker Hub deployment</li>
+      </ul>
+      <a href="https://github.com/vishakhachachare/CI-CD-node-app-project01" target="_blank"
+         class="inline-block mt-4 bg-white text-blue-700 font-semibold px-5 py-2 rounded-lg hover:bg-blue-100 transition">
+        🌐 View on GitHub
+      </a>
+    </div>
+
+    <!-- Pipeline Flow -->
+    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 w-80 hover:scale-105 transition-transform duration-300 shadow-lg">
+      <h2 class="text-2xl font-semibold mb-3">🔄 CI/CD Pipeline Flow</h2>
+      <ol class="list-decimal text-sm text-white/90 ml-5 space-y-2">
+        <li>Developer commits code to GitHub</li>
+        <li>GitHub Actions triggers build</li>
+        <li>Docker image built and tagged (v1, v2...)</li>
+        <li>Image pushed to Docker Hub</li>
+        <li>App auto-deployed to environment</li>
+      </ol>
+    </div>
+
+  </main>
+
+  <!-- Navigation Buttons -->
+  <section class="mt-12 flex flex-wrap gap-4 justify-center">
+    <a href="/about" class="bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-100 transition">ℹ️ About</a>
+    <a href="/health" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">🩺 Health</a>
+    <a href="/version" class="bg-white text-yellow-700 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-100 transition">🔖 Version</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-4 text-sm opacity-80">
+    © 2025 <strong>Vishakha Bhushan Gujar</strong> | Built with ❤️ using Node.js & Docker
+    <a href="https://github.com/vishakhachachare/CI-CD-node-app-project01" target="_blank">🌐 View on GitHub</a>
+  </footer>
+</body>
+</html>
+
+
+
+    
