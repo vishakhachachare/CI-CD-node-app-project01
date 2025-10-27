@@ -1,69 +1,71 @@
-// src/index.js
-const express = require("express");
+// index.js
+const express = require('express');
+const os = require('os');
 const app = express();
-const PORT = process.env.PORT || 3000;
-const packageJson = require("../package.json");
 
 // Middleware
 app.use(express.json());
 
-// 🌐 Home Route
-app.get("/", (req, res) => {
+// Config
+const PORT = process.env.PORT || 3000;
+const ENV = process.env.NODE_ENV || 'development';
+
+// Root Route
+app.get('/', (req, res) => {
   res.json({
-    message: "🚀 Welcome to the CI/CD Node.js App with Express!",
-    environment: process.env.NODE_ENV || "development",
-    description:
-      "This project demonstrates automated deployment using GitHub Actions, CI/CD pipeline, and Node.js best practices.",
-    features: [
-      "✅ Health monitoring endpoint",
-      "✅ Version info from package.json",
-      "✅ POST request testing endpoint",
-      "✅ Auto-deployment support",
-      "✅ JSON middleware integration",
-    ],
-    tips: "Try /health or /version in your browser to test endpoints.",
+    message: '🚀 Welcome to the CI/CD Node.js Application!',
+    description: 'This app demonstrates CI/CD pipeline integration using GitHub Actions and Docker.',
+    environment: ENV,
+    uptime: `${process.uptime().toFixed(2)} seconds`
   });
 });
 
-// 🩺 Health Check Route
-app.get("/health", (req, res) => {
-  res.status(200).json({
-    status: "UP",
-    service: "CI/CD Node App",
-    checkedAt: new Date().toISOString(),
-  });
-});
-
-// 🧭 Version Info Route
-app.get("/version", (req, res) => {
-  res.json({
-    version: packageJson.version,
-    app: packageJson.name,
-    author: packageJson.author || "Vishakha Bhushan Gujar",
-  });
-});
-
-// 📨 Echo POST Route
-app.post("/echo", (req, res) => {
-  res.json({
-    receivedData: req.body,
-    message: "Your data was received successfully!",
-    timestamp: new Date().toISOString(),
-  });
-});
-
-// 🧠 About Project
-app.get("/about", (req, res) => {
+// About Route
+app.get('/about', (req, res) => {
   res.json({
     project: "CI/CD Node.js Application",
     builtBy: "Vishakha Bhushan Gujar",
-    purpose:
-      "This app showcases how to integrate Node.js with GitHub Actions for continuous integration and deployment.",
-    techStack: ["Node.js", "Express.js", "GitHub Actions", "CI/CD Pipeline"],
+    purpose: "This app showcases how to integrate Node.js with GitHub Actions for continuous integration and deployment.",
+    techStack: ["Node.js", "Express.js", "GitHub Actions", "Docker", "CI/CD Pipeline"],
+    github: "https://github.com/vishakhachachare/CI-CD-node-app-project01",
+  });
+});
+
+// Health Check Route
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: '✅ UP',
+    timestamp: new Date().toISOString(),
+    server: os.hostname(),
+  });
+});
+
+// Version Info
+app.get('/version', (req, res) => {
+  res.json({
+    version: '1.0.0',
+    author: 'Vishakha Gujar',
+    lastDeployed: new Date().toLocaleString(),
+  });
+});
+
+// Echo Route
+app.post('/echo', (req, res) => {
+  res.json({
+    received: req.body,
+    message: 'Echo successful!',
+  });
+});
+
+// Catch-All Route
+app.use((req, res) => {
+  res.status(404).json({
+    error: '❌ Route not found',
+    hint: 'Try /, /about, /health, or /version',
   });
 });
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`✅ Server running at: http://localhost:${PORT}`);
+  console.log(`✅ Server running at: http://localhost:${PORT} in ${ENV} mode`);
 });
