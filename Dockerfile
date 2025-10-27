@@ -1,7 +1,7 @@
 # small production image
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /src
 
 # copy package files first (cache layers)
 COPY package*.json ./
