@@ -10,8 +10,10 @@ ci-cd-node-app/
 ├── __tests__/                    # Test folder
 │   └── app.test.js
 │
-| ── src/                    # Test folder
-│   └── index.js
+├── src/
+│   ├── index.js
+│   ├── public/
+│    └── dashboard.html
 |
 ├── .github/
 │   └── workflows/
